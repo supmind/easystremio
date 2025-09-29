@@ -1,4 +1,4 @@
-const StreamsList = ({ streams }) => {
+const StreamsList = ({ streams, onPlayStream }) => {
   if (!streams || streams.length === 0) {
     return (
       <div className="bg-gray-800 p-4 rounded-lg text-center text-gray-400">
@@ -28,7 +28,7 @@ const StreamsList = ({ streams }) => {
               </div>
             </div>
             <button
-              onClick={() => console.log(`Playing stream from ${stream.name}`)}
+              onClick={() => onPlayStream(stream.url)}
               className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
             >
               Play
